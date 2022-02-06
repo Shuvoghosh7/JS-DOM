@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    /*     #second-title{
+            background-color: rgba(210, 105, 30, 0.11);
+            text-align: center;
+     }
+ */
+    </style>
 </head>
 <body>
     <header>
@@ -17,11 +24,11 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dicta veritatis iure dolorem animi, cumque quo omnis ipsum molestiae vero dolores minima, nesciunt libero voluptatibus ab inventore sunt! Molestiae, nam.</p>
             </article>
             <article>
-                <h3>My awsome blog-2</h3>
+                <h3 id="second-title">My awsome blog-2</h3>
                 <p>Architecto voluptate, quod, unde minus qui blanditiis aliquid placeat, assumenda quis explicabo laboriosam ipsam fuga saepe autem quae libero perspiciatis aut iusto nemo pariatur nihil accusantium ex. Sunt, beatae natus.</p>
             </article>
             <article>
-                <h3>My awsome blog-3</h3>
+                <h3 id="four_title">My awsome blog-3</h3>
                 <p>Asperiores minima officia repellat perferendis, earum nostrum natus corrupti voluptates pariatur quis assumenda ullam autem illo in quas ea facilis voluptatibus? Ea non beatae placeat nesciunt voluptatem alias obcaecati totam!</p>
             </article>
         </section>
@@ -29,14 +36,22 @@
     <script>
         const blogTitle = document.getElementsByTagName('h3');
         for(const h3 of blogTitle){
-            console.log(h3.innerText);
+            // console.log(h3.innerText);
         }
         
         // console.log(document);
         const blogDetles =document. getElementsByTagName('p');
         for(const p of blogDetles){
-            console.log(p.innerText);
+            // console.log(p.innerText);
         }
+        const styles =document.getElementById('second-title')
+        styles.style.textAlign ='center'
+        styles.style.color='red'
+
+        const changeText =document.getElementById('four_title');
+        changeText.innerText='change the title text'
+        console.log(changeText);
+     
     </script>
 </body>
 </html>
