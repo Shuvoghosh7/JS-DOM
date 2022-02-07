@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul id="list">
+            <li>list-1</li>
+            <li>list-2</li>
+            <li>list-3</li>
+            <li>list-4</li>
+            <li>list-5</li>
+        </ul>
+    </header>
+    <main>
+        <section id="blogs">
+            <article class="allArtical">
+                <h1 id="title">blog - 1</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates optio ea rem, vitae facere fuga
+                    minima libero velit quidem animi. Eius non dolore quia id quas, sunt voluptates. Quibusdam, eum.</p>
+            </article>
+            <article class="allArtical">
+                <h1 id="3rd">blog - 2</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates optio ea rem, vitae facere fuga
+                    minima libero velit quidem animi. Eius non dolore quia id quas, sunt voluptates. Quibusdam, eum.</p>
+            </article>
+            <article class="allArtical" id="findChild">
+                <h1 id="last-blog">blog - 3</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates optio ea rem, vitae facere fuga
+                    minima libero velit quidem animi. Eius non dolore quia id quas, sunt voluptates. Quibusdam, eum.</p>
+            </article>
+        </section>
+    </main>
+    <script>
+        const h3 = document.getElementsByTagName('h1');;
+        for (const h1 of h3) {
+            console.log(h1.innerText);
+        }
+        // console.log(h3);
+        // ID use
+        const h1 = document.getElementById('title');
+        h1.style.color = 'red';
+        h1.style.textAlign = 'center';
+        console.log(h1);
+        
+        // change inner text
+        const last = document.getElementById('last-blog');
+        last.innerText = 'This is new blog';
+        last.style.color = 'green';
+        console.log(last.innerText)
+        // querySelector
+
+        const query = document.querySelectorAll('.allArtical')
+        console.log(query);
+
+        // add new element 
+
+        const add = document.createElement('h3');
+        add.innerText = 'blog-5'
+        const whereadd = document.getElementById('last-blog');
+        whereadd.appendChild(add);
+
+        const add2 = document.createElement('h3')
+        add2.innerText = 'blog-31';
+        const where2 = document.getElementById('3rd')
+        where2.appendChild(add2);
+        where2.style.color = 'red'
+
+        //add new blog or artical
+        const articals = document.createElement('article');
+        articals.classList.add('allArtical')
+        /* const h3tag = document.createElement('h3');
+        h3tag.innerText = 'My new blog-10';
+        const paragraph = document.createElement('p');
+        paragraph.innerText = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates optio ea rem, vitae facere fuga minima libero velit quidem animi. Eius non dolore quia id quas, sunt voluptates. Quibusdam, eum.';
+        //add h3 ,p in artical tag
+        articals.appendChild(h3tag);
+        articals.appendChild(paragraph); */
+        articals.innerHTML=`
+              <h3>My new blog-10</h3>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates optio ea rem, vitae facere fuga minima libero velit quidem animi. Eius non dolore quia id quas, sunt voluptates</p>
+        `
+        // now where artical tag add select that means find parents of artial
+        const sectionBlog = document.getElementById('blogs');
+        sectionBlog.appendChild(articals);
+
+        // uses class
+        const clasN = document.getElementsByClassName('allArtical');
+        for (const name of clasN) {
+            name.style.border = '2px solid red'
+            name.style.margin = '10px'
+            name.style.backgroundColor = 'mediumaquamarine '
+            //    console.log(name.innerText);
+        }
+   const remove = document.getElementById('list')
+//    console.log(remove);
+   const removeL3 =remove.children[3];
+   remove.removeChild(removeL3);
+   console.log(removeL3)
+
+    </script>
+</body>
+
+</html>
